@@ -22,7 +22,7 @@ import { ViewMembers } from './components/pages/Members';
 import { ViewPrograms } from './components/pages/Programs';
 import { ViewStaff } from './components/pages/Staff';
 import { ViewClubs } from './components/pages/Clubs';
-
+import { EmojiPage } from './components/pages/Emoji';
 
 ReactDOM.render(
   <Router>
@@ -50,10 +50,34 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
+        {/* <Route path="/emoji" component={EmojiPage} /> */}
 
         <Route path="/qrgenerator" component={QRCodeGenerator} />
         <Route path="/qrreader" component={QRCodeReader} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
+
+        {/* <SecureRoute
+          exact path="/checking-buttons" component={}
+        /> */}
+
+        <SecureRoute exact path="/emoji-check-in" component={EmojiPage} />
+
+        {/* <SecureRoute
+          exact path="/activity-check-in" component={}
+        /> */}
+
+        {/* <SecureRoute
+          exact path="/emoji-check-event" component={ }
+        /> */}
+
+        {/* <SecureRoute
+          exact path="/emoji-check-out" component={ }
+        />  */}
+
+        {/* <SecureRoute
+          exact path="/emoji-check-out" component={ }
+        /> */}
+
         <SecureRoute
           exact
           path="/"

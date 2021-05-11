@@ -77,6 +77,9 @@ function App() {
         {/* <SecureRoute
           exact path="/emoji-check-out" component={ }
         /> */}
+        {/* <SecureRoute
+          exact path="/success-page" component={ }
+        /> */}
 
         <SecureRoute
           exact

@@ -5,7 +5,7 @@ const QRCodeReader = props => {
   const [scanByWebcam, setScanByWebcam] = useState('');
 
   const handleError = err => {
-    console.error(err);
+    console.alert(err);
   };
 
   const handleScan = data => {

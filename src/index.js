@@ -22,7 +22,7 @@ import { ViewMembers } from './components/pages/Members';
 import { ViewPrograms } from './components/pages/Programs';
 import { ViewStaff } from './components/pages/Staff';
 import { ViewClubs } from './components/pages/Clubs';
-import { EmojiPage } from './components/pages/EmojiCheckIn';
+import { EmojiCheckIn } from './components/pages/EmojiCheckIn';
 import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
 import { CheckOutEmoji } from './components/pages/EmojiCheckOut';
 import { CheckEventActivity } from './components/pages/CheckEventActivity';
@@ -65,7 +65,7 @@ function App() {
           path="/checking-buttons"
           component={CheckInEventOut}
         />
-        <SecureRoute exact path="/emoji-check-in" component={EmojiPage} />
+        <SecureRoute exact path="/emoji-check-in" component={EmojiCheckIn} />
         <SecureRoute exact path="/emoji-check-out" component={CheckOutEmoji} />
         <SecureRoute
           exact

@@ -1,1 +1,1 @@
-export { default as EmojiPage } from './EmojiContainerCheckIn';
+export { default as EmojiCheckIn } from './EmojiContainerCheckIn';

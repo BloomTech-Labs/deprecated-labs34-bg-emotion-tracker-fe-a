@@ -22,6 +22,11 @@ import { ViewMembers } from './components/pages/Members';
 import { ViewPrograms } from './components/pages/Programs';
 import { ViewStaff } from './components/pages/Staff';
 import { ViewClubs } from './components/pages/Clubs';
+import { EmojiCheckIn } from './components/pages/EmojiCheckIn';
+import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
+import { EmojiCheckOut } from './components/pages/EmojiCheckOut';
+import { CheckEventActivity } from './components/pages/CheckEventActivity';
+import { CheckEventActivityEmoji } from './components/pages/CheckEventActivityEmoji';
 
 ReactDOM.render(
   <Router>
@@ -49,9 +54,33 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
+        {/* <Route path="/emoji" component={EmojiPage} /> */}
 
         <Route path="/qrreader" component={QRCodeReader} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
+
+        <SecureRoute
+          exact
+          path="/checking-buttons"
+          component={CheckInEventOut}
+        />
+        <SecureRoute exact path="/emoji-check-in" component={EmojiCheckIn} />
+        <SecureRoute exact path="/emoji-check-out" component={EmojiCheckOut} />
+        <SecureRoute
+          exact
+          path="/activity-check-in"
+          component={CheckEventActivity}
+        />
+        <SecureRoute
+          exact
+          path="/emoji-check-event"
+          component={CheckEventActivityEmoji}
+        />
+
+        {/* <SecureRoute
+          exact path="/success-page" component={ }
+        /> */}
+
         <SecureRoute
           exact
           path="/"

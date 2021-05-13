@@ -24,7 +24,7 @@ import { ViewStaff } from './components/pages/Staff';
 import { ViewClubs } from './components/pages/Clubs';
 import { EmojiCheckIn } from './components/pages/EmojiCheckIn';
 import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
-import { CheckOutEmoji } from './components/pages/EmojiCheckOut';
+import { EmojiCheckOut } from './components/pages/EmojiCheckOut';
 import { CheckEventActivity } from './components/pages/CheckEventActivity';
 import { CheckEventActivityEmoji } from './components/pages/CheckEventActivityEmoji';
 
@@ -56,7 +56,6 @@ function App() {
         <Route path="/landing" component={LandingPage} />
         {/* <Route path="/emoji" component={EmojiPage} /> */}
 
-        <Route path="/qrgenerator" component={QRCodeGenerator} />
         <Route path="/qrreader" component={QRCodeReader} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
 
@@ -66,7 +65,7 @@ function App() {
           component={CheckInEventOut}
         />
         <SecureRoute exact path="/emoji-check-in" component={EmojiCheckIn} />
-        <SecureRoute exact path="/emoji-check-out" component={CheckOutEmoji} />
+        <SecureRoute exact path="/emoji-check-out" component={EmojiCheckOut} />
         <SecureRoute
           exact
           path="/activity-check-in"

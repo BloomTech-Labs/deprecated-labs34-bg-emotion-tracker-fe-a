@@ -28,8 +28,8 @@ const ImportModal = props => {
     // upload data to server
     // generate id cards
     // After Response show completed
-    console.warn('submited');
-    showAlert('Members successfully added', 'success');
+    console.warn('Submitted');
+    showAlert('Members Successfully Added', 'Success');
     clearState();
     //QR Component
     setGenerateQR(true);

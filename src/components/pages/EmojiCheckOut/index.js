@@ -1,1 +1,1 @@
-export { default as CheckOutEmoji } from './EmojiContainerCheckOut';
+export { default as EmojiCheckOut } from './EmojiContainerCheckOut';

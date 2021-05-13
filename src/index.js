@@ -23,7 +23,6 @@ import { ViewPrograms } from './components/pages/Programs';
 import { ViewStaff } from './components/pages/Staff';
 import { ViewClubs } from './components/pages/Clubs';
 
-
 ReactDOM.render(
   <Router>
     <React.StrictMode>
@@ -51,7 +50,6 @@ function App() {
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
 
-        <Route path="/qrgenerator" component={QRCodeGenerator} />
         <Route path="/qrreader" component={QRCodeReader} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
         <SecureRoute

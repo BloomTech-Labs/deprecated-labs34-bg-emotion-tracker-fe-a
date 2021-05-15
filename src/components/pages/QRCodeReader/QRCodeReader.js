@@ -1,26 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import QrReader from 'modern-react-qr-reader';
+import { Button } from 'antd';
 
 const QRCodeReader = props => {
+  const [scanByWebcam, setScanByWebcam] = useState('');
+
   const handleError = err => {
-    console.error(err);
+    console.log(err);
   };
 
   const handleScan = data => {
     if (data) {
-      console.log(data);
+      setScanByWebcam(data);
     }
   };
 
+  const handleChange = e => {
+    setScanByWebcam(e.target.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    // Need to add where we going to send the Id that is recieved
+  };
+
   return (
-    <div>
+    <div style={{ justifyContent: 'center', textAlign: 'center' }}>
       <QrReader
         delay={300}
         facingMode={'environment'}
-        style={{ width: '50%' }}
+        style={{ width: '40%', margin: '0 auto', padding: '4%' }}
         onError={handleError}
         onScan={handleScan}
       />
+      <h2>
+        QR Code Scanned: <br /> {scanByWebcam}
+      </h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="id-text">
+          Student ID:
+          <input value={scanByWebcam} onChange={handleChange} />
+        </label>
+        <button>Submit</button>
+      </form>
     </div>
   );
 };

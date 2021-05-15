@@ -29,13 +29,16 @@ const QRCodeReader = props => {
       <QrReader
         delay={300}
         facingMode={'environment'}
+
         style={{ width: '40%', margin: '0 auto', padding: '4%' }}
+
         onError={handleError}
         onScan={handleScan}
       />
       <h2>
         QR Code Scanned: <br /> {scanByWebcam}
       </h2>
+
       <form onSubmit={handleSubmit}>
         <label htmlFor="id-text">
           Student ID:
@@ -43,6 +46,7 @@ const QRCodeReader = props => {
         </label>
         <button>Submit</button>
       </form>
+
     </div>
   );
 };

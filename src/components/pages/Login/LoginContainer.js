@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
-import bglogo from "../../../assets/images/BGC-logo-blue.png";
+import bglogo from '../../../assets/images/BGC-logo-blue.png';
 
 import { config } from '../../../utils/oktaConfig';
 
@@ -22,7 +22,8 @@ const LoginContainer = () => {
       // add your custom logo to your signing/register widget here.
       i18n: {
         en: {
-          'primaryauth.title': 'Welcome to The BOYS & GIRLS CLUB of the Greater Conejo Valley',
+          'primaryauth.title':
+            'Welcome to The BOYS & GIRLS CLUB of the Greater Conejo Valley',
           // change title for your app
         },
       },

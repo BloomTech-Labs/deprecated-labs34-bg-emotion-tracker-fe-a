@@ -34,8 +34,8 @@
   .heading {
     display: flex;
     align-items: center;
-    height: 582px;
-  }
+    height: 581px;
+  } 
   
   .button {
     position: relative;

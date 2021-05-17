@@ -53,7 +53,7 @@ function App() {
         <Route path="/success" component={Success} />
         <Route path="/qrgenerator" component={QRCodeGenerator} />
         <Route path="/qrreader" component={QRCodeReader} />
-        {/* any of the routes you need secured should be registered as SecureRoutes */}
+        {/* any of the routes yo u need secured should be registered as SecureRoutes */}
         <SecureRoute
           exact
           path="/"

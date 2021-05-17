@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Success.css';
-import check from '../../../assets/images/ad1.jpg';
-
-const API_URL = 'https://dog.ceo/api/breeds/image/random/';
+import check from '../../../assets/images/ad12.jpg';
 
 export default function Success() {
   const [dogData, setDogData] = useState({});

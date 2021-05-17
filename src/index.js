@@ -27,6 +27,7 @@ import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
 import { EmojiCheckOut } from './components/pages/EmojiCheckOut';
 import { CheckEventActivity } from './components/pages/CheckEventActivity';
 import { CheckEventActivityEmoji } from './components/pages/CheckEventActivityEmoji';
+import Success from './components/pages/Success/Success';
 
 ReactDOM.render(
   <Router>
@@ -55,7 +56,7 @@ function App() {
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
         {/* <Route path="/emoji" component={EmojiPage} /> */}
-
+        <Route path="/success" component={Success} />
         <Route path="/qrreader" component={QRCodeReader} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
 

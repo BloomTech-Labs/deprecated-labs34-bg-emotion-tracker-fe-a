@@ -1,16 +1,25 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 // import React, { useEffect, useState } from 'react';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
 // import axios from 'axios';
 
 const EmojiContainerCheckIn = props => {
+  const history = useHistory();
+
+  const OnSubmit = () => {
+    history.push('/success');
+  };
   return (
     <>
       <NavBar />
       <StyledActivities>
         <div className="ActivityContainerBox">
           <h1>Check Event</h1>
+          <button onClick={OnSubmit} className="finish-button">
+            Finish
+          </button>
         </div>
       </StyledActivities>
     </>

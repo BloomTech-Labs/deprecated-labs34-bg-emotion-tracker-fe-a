@@ -1,8 +1,9 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import NavBar from '../../common/NavBar';
 import { Card } from 'antd';
+import { Space, Button } from 'antd';
 
 const StyledHomePage = styled.header`
   display: flex;
@@ -20,6 +21,9 @@ function RenderHomePage(props) {
       <NavBar titleName="Dashboard" backgroundColor="#293845" />
       <StyledHomePage>
         <h2>Club Name</h2>
+        <Link to="./QRCodeReader">
+          <Button type="primary">Click Me!</Button>
+        </Link>
         <Card>Sample Data</Card>
       </StyledHomePage>
     </>

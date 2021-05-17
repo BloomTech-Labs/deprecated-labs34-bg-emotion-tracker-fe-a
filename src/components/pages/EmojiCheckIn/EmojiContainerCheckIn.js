@@ -10,6 +10,7 @@ const EmojiContainerCheckIn = props => {
       <NavBar />
       <StyledEmoji>
         <h1>Check In</h1>
+
         <div className="EmojiContainerBox">
           <div className="feeling-box">
             <h2>How Are you Feeling?</h2>
@@ -34,8 +35,11 @@ const StyledEmoji = styled.div`
     border: 2px solid black;
     -webkit-box-shadow: 20px 16px 20px 10px #121f35;
     box-shadow: 20px 16px 20px 10px #121f35;
-
-    padding: 100px 50px;
+    padding: 130px 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6%;
   }
   .feeling-box {
     border: none;
@@ -56,7 +60,7 @@ const StyledEmoji = styled.div`
     background-color: #ebffed;
     color: #519957;
     opacity: 1;
-    transition: 0.5s;
+    transition: 0.3s;
   }
   .finish-button:active {
     transition: none;

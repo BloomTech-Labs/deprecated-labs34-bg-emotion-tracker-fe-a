@@ -70,7 +70,7 @@
     animation-delay: 0.06s;
   }
 
- img {
+ /* img {
       width:30%;
       height:auto;
   }
@@ -79,7 +79,7 @@
     width: auto;
     height:20rem;
     border-radius: 10%;
-  }
+  } */
     
   @keyframes rotate {
     0% {

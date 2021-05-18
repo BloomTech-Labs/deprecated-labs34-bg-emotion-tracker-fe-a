@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import QrReader from 'modern-react-qr-reader';
 import { Button } from 'antd';
 
 const QRCodeReader = props => {
+  const history = useHistory();
+
   const [scanByWebcam, setScanByWebcam] = useState('');
 
   const handleError = err => {
@@ -21,6 +24,7 @@ const QRCodeReader = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    history.push('/checking-buttons');
     // Need to add where we going to send the Id that is recieved
   };
 
@@ -29,9 +33,7 @@ const QRCodeReader = props => {
       <QrReader
         delay={300}
         facingMode={'environment'}
-
         style={{ width: '40%', margin: '0 auto', padding: '4%' }}
-
         onError={handleError}
         onScan={handleScan}
       />
@@ -46,7 +48,6 @@ const QRCodeReader = props => {
         </label>
         <button>Submit</button>
       </form>
-
     </div>
   );
 };

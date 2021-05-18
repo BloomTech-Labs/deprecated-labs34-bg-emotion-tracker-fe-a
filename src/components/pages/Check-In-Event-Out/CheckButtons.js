@@ -51,9 +51,12 @@ const StyledEmojiPage = styled.div`
 
   .EmojiContainerBox {
     border: 3px solid black;
+
     -webkit-box-shadow: 20px 16px 20px 10px #121f35;
     box-shadow: 20px 16px 20px 10px #121f35;
     padding: 130px 160px;
+    border-radius: 60px;
+
     display: flex;
     flex-direction: column;
     align-items: center;

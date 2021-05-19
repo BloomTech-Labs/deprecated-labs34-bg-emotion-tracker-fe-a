@@ -74,7 +74,7 @@ function App() {
         />
         <SecureRoute
           exact
-          path="/emoji-check-event"
+          path="/activity-check-in-emoji"
           component={CheckEventActivityEmoji}
         />
 

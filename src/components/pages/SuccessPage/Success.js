@@ -5,7 +5,8 @@ import check from '../../../assets/images/ad1.jpg';
 
 const API_URL = 'https://dog.ceo/api/breeds/image/random/';
 
-export default function Success() {
+export default function Success(props) {
+  const studentId = props.location.state;
   const [dogData, setDogData] = useState({});
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function Success() {
     <div className="apps">
       <div className="card">
         <img src={check} alt="check"></img>
-        <h1>Thank you for checking in!</h1>
+        <h1> {studentId} Thank you for checking in!</h1>
         <h3>Your dog of the day</h3>
         <div className="dogimage">
           <img src={dogData.message} alt="cute dog" />

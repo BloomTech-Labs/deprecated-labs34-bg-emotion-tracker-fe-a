@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
@@ -16,7 +16,6 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
-import { QRCodeGenerator } from './components/pages/QRCodeGenerator';
 import { QRCodeReader } from './components/pages/QRCodeReader';
 import { ViewMembers } from './components/pages/Members';
 import { ViewPrograms } from './components/pages/Programs';

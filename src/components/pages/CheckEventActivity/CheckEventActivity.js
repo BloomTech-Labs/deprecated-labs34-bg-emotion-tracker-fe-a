@@ -6,10 +6,11 @@ import styled from 'styled-components';
 // import axios from 'axios';
 
 const CheckEventActivityEmoji = props => {
+  const studentId = props.location.state;
   const history = useHistory();
 
-  const OnSubmit = () => {
-    history.push('/activity-check-in-emoji');
+  const OnSubmit = props => {
+    history.push('/activity-check-in-emoji', studentId);
   };
 
   return (
@@ -20,7 +21,9 @@ const CheckEventActivityEmoji = props => {
         <div className="ActivityContainerBox">
           <form className="form container">
             <label>
-              <h2 className="">Select Your Activity</h2>
+              <h2 className="">
+                Select Your Activity <strong>{studentId}</strong>.
+              </h2>
               <select className="dropdown" name="size">
                 <option value="">- Select an option -</option>
                 <option value="sports">⚽️ Sports</option>

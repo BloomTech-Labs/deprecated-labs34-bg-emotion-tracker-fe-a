@@ -6,21 +6,24 @@ import styled from 'styled-components';
 // import axios from 'axios';
 
 const EmojiContainerCheckIn = props => {
+  const studentId = props.location.state;
   const history = useHistory();
 
   const OnSubmit = () => {
-    history.push('/success');
+    history.push('/success', studentId);
   };
 
   const goToMainPage = () => {
-    history.push('/checking-buttons');
+    history.push('/checking-buttons', studentId);
   };
 
   return (
     <>
       <NavBar />
       <StyledEmoji>
-        <h1>Check In</h1>
+        <h1>
+          Check In <strong>{studentId}</strong>
+        </h1>
 
         <div className="EmojiContainerBox">
           <button onClick={goToMainPage} className="left-arrow-button">

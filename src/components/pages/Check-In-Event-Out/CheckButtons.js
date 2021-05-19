@@ -6,16 +6,17 @@ import styled from 'styled-components';
 // import axios from 'axios';
 
 const CheckButtonsContainer = props => {
+  const studentId = props.location.state;
   const history = useHistory();
 
   const routeToCheckIn = () => {
-    history.push('/emoji-check-in');
+    history.push('/emoji-check-in', studentId);
   };
   const routeToCheckEvent = () => {
-    history.push('/activity-check-in');
+    history.push('/activity-check-in', studentId);
   };
   const routeToCheckOut = () => {
-    history.push('/emoji-check-out');
+    history.push('/emoji-check-out', studentId);
   };
 
   return (
@@ -24,6 +25,10 @@ const CheckButtonsContainer = props => {
 
       <StyledEmojiPage>
         <div className="EmojiContainerBox">
+          <h2>
+            {' '}
+            What are we doing today <strong>{studentId}</strong>!
+          </h2>
           <button onClick={routeToCheckIn} className="btn CheckButtons">
             Check-In
           </button>

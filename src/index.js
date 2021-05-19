@@ -25,7 +25,7 @@ import Success from './components/pages/SuccessPage/Success';
 import { EmojiCheckIn } from './components/pages/EmojiCheckIn';
 import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
 import { EmojiCheckOut } from './components/pages/EmojiCheckOut';
-import { CheckEventActivity } from './components/pages/CheckEventActivity';
+import { CheckEventActivity } from './components/pages/ActivityCheckIn';
 import { CheckEventActivityEmoji } from './components/pages/CheckEventActivityEmoji';
 
 ReactDOM.render(

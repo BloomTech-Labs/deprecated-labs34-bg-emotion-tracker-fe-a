@@ -33,7 +33,7 @@ const CheckButtonsContainer = props => {
             Check-In
           </button>
           <button onClick={routeToCheckEvent} className="btn CheckButtons">
-            Check-Event
+            Activity Check-In
           </button>
           <button onClick={routeToCheckOut} className="btn CheckButtons">
             Check-Out
@@ -73,12 +73,12 @@ const StyledEmojiPage = styled.div`
     position: relative;
     display: block;
     color: black;
-    font-size: 29px;
+    font-size: 35px;
     text-decoration: none;
     margin: 30px;
     border: 3.5px solid #519957;
-    border-radius: 25px;
-    height: 40%;
+    border-radius: 30px;
+    height: 50%;
     width: 90%;
 
     overflow: hidden;

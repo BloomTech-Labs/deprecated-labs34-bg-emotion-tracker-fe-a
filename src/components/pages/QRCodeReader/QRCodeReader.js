@@ -56,6 +56,7 @@ const QRCodeReader = props => {
           </form>
         </div>
       </QRScanner>
+
     </div>
   );
 };

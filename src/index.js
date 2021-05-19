@@ -25,7 +25,7 @@ import { ViewClubs } from './components/pages/Clubs';
 import { EmojiCheckIn } from './components/pages/EmojiCheckIn';
 import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
 import { EmojiCheckOut } from './components/pages/EmojiCheckOut';
-import { CheckEventActivity } from './components/pages/CheckEventActivity';
+import { CheckEventActivity } from './components/pages/ActivityCheckIn';
 import { CheckEventActivityEmoji } from './components/pages/CheckEventActivityEmoji';
 import Success from './components/pages/Success/Success';
 

@@ -7,6 +7,7 @@ import {
   TeamOutlined,
   LineChartOutlined,
   CalendarOutlined,
+  LogoutOutlined,
 } from '@ant-design/icons';
 import logo from '../../assets/images/BGC-logo-header.png';
 import { Link } from 'react-router-dom';
@@ -80,6 +81,14 @@ function NavBar(props) {
         onClick={() => history.push('/manage-clubs')}
       >
         Manage Clubs
+      </Menu.Item>
+
+      <Menu.Item
+        key="6"
+        icon={<LogoutOutlined />}
+        onClick={() => history.push('/login')}
+      >
+        Logout
       </Menu.Item>
     </Menu>
   );

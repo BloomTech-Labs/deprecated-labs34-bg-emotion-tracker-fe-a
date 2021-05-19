@@ -9,6 +9,7 @@ import {
   CalendarOutlined,
 } from '@ant-design/icons';
 import logo from '../../assets/images/BGC-logo-header.png';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 
 const StyledNavBar = styled.header`
@@ -16,7 +17,7 @@ const StyledNavBar = styled.header`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  background-color: rgba(0, 129, 198, 1);
+  background-color: rgb(37, 78, 219);
   text-align: center;
   img,
   .menu-container {
@@ -30,9 +31,10 @@ const StyledNavBar = styled.header`
     height: 60px;
     width: auto;
   }
-  h1 {
+  h3 {
     color: white;
-    margin: 0;
+    margin-bottom: -15px;
+    margin-right: 60px;
   }
 `;
 
@@ -87,13 +89,15 @@ function NavBar(props) {
       <StyledNavBar backgroundColor={props.backgroundColor}>
         <div className="menu-container">
           <Dropdown overlay={menu}>
-            <Button type="text" style={{ color: 'white', fontSize: '32px' }}>
+            <Button type="text" style={{ color: 'white', fontSize: '45px' }}>
               <MenuOutlined />
             </Button>
           </Dropdown>
         </div>
-        <h1>{props.titleName}</h1>
         <img src={logo} alt="Boys & Girls Club of Greater Conejo Valley" />
+        <Link to="./">
+          <h3>{props.titleName}</h3>
+        </Link>
       </StyledNavBar>
     </>
   );

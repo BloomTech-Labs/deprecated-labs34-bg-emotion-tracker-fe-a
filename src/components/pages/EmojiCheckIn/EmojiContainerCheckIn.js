@@ -37,11 +37,11 @@ const EmojiContainerCheckIn = props => {
           <h2 className="feelingTitle">How Are you Feeling?</h2>
 
           <div className="emoji-div">
-            <h2 className="emojis"> 😁 </h2>
-            <h2 className="emojis"> 😌 </h2>
-            <h2 className="emojis"> 😕 </h2>
-            <h2 className="emojis"> 😒 </h2>
-            <h2 className="emojis"> 😭 </h2>
+            <button className="emojis"> 😁 </button>
+            <button className="emojis"> 😌 </button>
+            <button className="emojis"> 😕 </button>
+            <button className="emojis"> 😒 </button>
+            <button className="emojis"> 😭 </button>
           </div>
 
           <button onClick={OnSubmit} className="finish-button">
@@ -129,16 +129,20 @@ const StyledEmoji = styled.div`
     justify-content: space-evenly;
     /* border-radius: 30%;
     border: 2px solid black; */
-    font-size: 80px;
+    font-size: 120px;
     cursor: pointer;
     transition: all 0.9s ease-in-out;
     margin-left: 10px;
     margin-right: 10px;
+    border: none;
+    background-color: #d1d1d1; /* light gray */
+    background-color: transparent;
   }
 
   .emojis:hover {
     transform: scale(2.2);
-    transform: rotate(360deg);
+    background-color: transparent;
+    /* transform: rotate(360deg); */
   }
   /* Emojis Start!!! */
 

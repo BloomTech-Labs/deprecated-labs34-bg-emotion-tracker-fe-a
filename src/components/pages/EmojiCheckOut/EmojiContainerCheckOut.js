@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-// import React, { useEffect, useState } from 'react';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-// import axios from 'axios';
+import axios from 'axios';
 
 const EmojiContainerCheckIn = props => {
-  const studentId = props.location.state;
+  const studentInfo = {
+    studentId: props.location.state,
+    reaction: '',
+  };
+  const [formState, setFormState] = useState({ studentInfo });
   const history = useHistory();
 
   const OnSubmit = () => {
-    history.push('/success', studentId);
+    history.push('/success', formState.studentId);
   };
 
   const goToMainPage = () => {
-    history.push('/checking-buttons', studentId);
+    history.push('/checking-buttons', formState.studentId);
+  };
+
+  const inputChange = e => {
+    setFormState({
+      ...studentInfo,
+      reaction: e.target.value,
+    });
+    console.log(formState);
   };
 
   return (
     <>
       <NavBar />
       <StyledEmoji>
-        <h1>Check Out {studentId} </h1>
+        <h1>Check Out {studentInfo.studentId} </h1>
 
         <div className="EmojiContainerBox">
           <p onClick={goToMainPage} className="left-arrow-button">
@@ -35,11 +46,38 @@ const EmojiContainerCheckIn = props => {
           <h2 className="feelingTitle">How Are you Feeling?</h2>
 
           <div className="emoji-div">
-            <h2 className="emojis"> 😁 </h2>
-            <h2 className="emojis"> 😌 </h2>
-            <h2 className="emojis"> 😕 </h2>
-            <h2 className="emojis"> 😒 </h2>
-            <h2 className="emojis"> 😭 </h2>
+            <form>
+              <input
+                name="😁"
+                type="button"
+                value="😁"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😌"
+                type="button"
+                value="😌"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😕"
+                type="button"
+                value="😕"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😒"
+                type="button"
+                value="😒"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😭"
+                type="button"
+                value="😭"
+                onClick={inputChange}
+              ></input>
+            </form>
           </div>
 
           <button onClick={OnSubmit} className="finish-button">

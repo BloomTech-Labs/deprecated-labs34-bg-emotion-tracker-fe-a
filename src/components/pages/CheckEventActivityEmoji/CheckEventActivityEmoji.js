@@ -1,19 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-// import axios from 'axios';
+import axios from 'axios';
 
 const EmojiContainerCheckIn = props => {
-  const studentId = props.location.state;
+  const studentInfo = {
+    studentId: props.location.state,
+    reaction: '',
+  };
+  const [formState, setFormState] = useState({ studentInfo });
   const history = useHistory();
 
   const OnSubmit = () => {
-    history.push('/success', studentId);
+    history.push('/success', formState);
   };
 
   const goToPrevPage = () => {
-    history.push('/activity-check-in');
+    history.push('/activity-check-in', formState.studentId);
+  };
+
+  // const formSubmit = e => {
+  //   e.preventDefault();
+  //   // axios
+  //   //   .post("", formState)
+  //   //   .then(res => {
+  //   //     setPost(res.data); // get just the form data from the REST api
+
+  //       // reset form if successful
+  //       setFormState({
+  //         reaction:'',
+  //       });
+  //     })
+  //     // .catch(err => console.log(err.response));
+  // };
+
+  const inputChange = e => {
+    setFormState({
+      ...studentInfo,
+      reaction: e.target.value,
+    });
+    console.log(formState);
   };
 
   return (
@@ -29,16 +56,42 @@ const EmojiContainerCheckIn = props => {
           </p>
 
           {/* Hardcoded for now */}
-          <h1 className="id">{studentId}</h1>
+          <h1 className="id">{studentInfo.studentId}</h1>
 
           <h2 className="feelingTitle">How Are you Feeling?</h2>
-
           <div className="emoji-div">
-            <h2 className="emojis"> 😁 </h2>
-            <h2 className="emojis"> 😌 </h2>
-            <h2 className="emojis"> 😕 </h2>
-            <h2 className="emojis"> 😒 </h2>
-            <h2 className="emojis"> 😭 </h2>
+            <form>
+              <input
+                name="😁"
+                type="button"
+                value="😁"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😌"
+                type="button"
+                value="😌"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😕"
+                type="button"
+                value="😕"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😒"
+                type="button"
+                value="😒"
+                onClick={inputChange}
+              ></input>
+              <input
+                name="😭"
+                type="button"
+                value="😭"
+                onClick={inputChange}
+              ></input>
+            </form>
           </div>
 
           <button onClick={OnSubmit} className="finish-button">

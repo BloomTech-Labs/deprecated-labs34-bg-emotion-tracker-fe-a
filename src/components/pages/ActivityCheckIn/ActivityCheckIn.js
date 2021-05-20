@@ -14,7 +14,7 @@ const CheckEventActivityEmoji = props => {
   };
 
   const goToMainPage = () => {
-    history.push('/checking-buttons');
+    history.push('/checking-buttons', studentId);
   };
 
   return (

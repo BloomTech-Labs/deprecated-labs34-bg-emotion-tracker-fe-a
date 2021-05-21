@@ -116,7 +116,7 @@ const StyledEmoji = styled.div`
   }
 
   .arrow {
-    border: solid green;
+    border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 5px;
@@ -154,29 +154,29 @@ const StyledEmoji = styled.div`
   } */
 
   /* Emojis Start!!! */
-  .emoji-div {
+  form {
     display: flex;
     flex-direction: row;
-    margin: 2%;
   }
 
-  .emojis {
-    display: flex;
+  input {
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    /* border-radius: 30%;
-    border: 2px solid black; */
-    font-size: 80px;
+    font-size: 90px;
     cursor: pointer;
-    transition: all 0.9s ease-in-out;
-    margin-left: 10px;
-    margin-right: 10px;
+    transition: all 0.5s ease-in-out;
+    margin: 2%;
+    margin-left: 12px;
+    margin-right: 12px;
+    border: none;
+    background: transparent;
   }
 
-  .emojis:hover {
+  input:hover {
     transform: scale(2.2);
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
   }
-  /* Emojis Start!!! */
+  /* Emojis End!!! */
 
   /* Finish button!!! */
   .finish-button {
@@ -185,9 +185,9 @@ const StyledEmoji = styled.div`
     background-color: white;
     font-size: 30px;
     border-radius: 30px;
-    height: 9%;
-    width: 70%;
-    padding: 4px 25px;
+    height: 15%;
+    width: 80%;
+    padding: 1% 10%;
     opacity: 0.7;
     /* margin: 2%; */
   }
@@ -202,4 +202,77 @@ const StyledEmoji = styled.div`
     color: black;
   }
   /* Finish button End!!! */
+
+  @media only screen and (max-device-width: 960px) and (-webkit-min-device-pixel-ratio: 1) {
+    /* background-color: green; */
+
+    /* Return Button Start!!! */
+    .left-arrow-button {
+      display: inline-block;
+      background-color: #d1d1d1;
+      border-radius: 20px;
+      border: none;
+      text-align: center;
+      font-size: 20px;
+      transition: all 0.5s;
+      margin: 10px;
+      cursor: pointer;
+      /* margin-bottom: 10px; */
+      margin-top: -19%;
+      margin-left: -60%;
+    }
+
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 5px;
+    }
+
+    .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+    /* Return Button End!!! */
+
+    .EmojiContainerBox {
+      border: 2px solid black;
+
+      -webkit-box-shadow: 20px 16px 20px 10px #121f35;
+      box-shadow: 20px 16px 20px 10px #121f35;
+      padding: 140px 25px;
+      border-radius: 60px;
+
+      background-color: #d1d1d1; /* light gray */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* margin: ; */
+    }
+
+    /* Finish button!!! */
+    .finish-button {
+      border: 2.5px solid #519957;
+      color: #519957;
+      background-color: white;
+      font-size: 35px;
+      border-radius: 30px;
+      height: 19%;
+      width: 75%;
+      padding: 1% 10%;
+      opacity: 0.7;
+      margin: 4%;
+    }
+    .finish-button:hover {
+      background-color: #ebffed;
+      color: #519957;
+      opacity: 1;
+      transition: 0.4s;
+    }
+    .finish-button:active {
+      transition: none;
+      color: black;
+    }
+    /* Finish button End!!! */
+  }
 `;

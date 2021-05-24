@@ -6,16 +6,17 @@ import styled from 'styled-components';
 // import axios from 'axios';
 
 const CheckButtonsContainer = props => {
+  const studentId = props.location.state;
   const history = useHistory();
 
   const routeToCheckIn = () => {
-    history.push('/emoji-check-in');
+    history.push('/emoji-check-in', studentId);
   };
   const routeToCheckEvent = () => {
-    history.push('/activity-check-in');
+    history.push('/activity-check-in', studentId);
   };
   const routeToCheckOut = () => {
-    history.push('/emoji-check-out');
+    history.push('/emoji-check-out', studentId);
   };
 
   return (
@@ -24,11 +25,15 @@ const CheckButtonsContainer = props => {
 
       <StyledEmojiPage>
         <div className="EmojiContainerBox">
+          <h2>
+            {' '}
+            What are we doing today <strong>{studentId}</strong>!
+          </h2>
           <button onClick={routeToCheckIn} className="btn CheckButtons">
             Check-In
           </button>
           <button onClick={routeToCheckEvent} className="btn CheckButtons">
-            Check-Event
+            Activity Check-In
           </button>
           <button onClick={routeToCheckOut} className="btn CheckButtons">
             Check-Out
@@ -45,9 +50,6 @@ const StyledEmojiPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  .app {
-    background-color: black;
-  }
 
   .EmojiContainerBox {
     border: 3px solid black;
@@ -57,10 +59,15 @@ const StyledEmojiPage = styled.div`
     padding: 130px 160px;
     border-radius: 60px;
 
+    background-color: #d1d1d1; /* light gray */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 6%;
+  }
+
+  h2 {
+    font-size: xx-large;
   }
 
   .btn {
@@ -68,14 +75,13 @@ const StyledEmojiPage = styled.div`
     position: relative;
     display: block;
     color: black;
-    font-size: 29px;
+    font-size: 35px;
     text-decoration: none;
     margin: 30px;
     border: 3.5px solid #519957;
-    border-radius: 25px;
-    height: 40%;
+    border-radius: 30px;
+    height: 50%;
     width: 90%;
-
     overflow: hidden;
   }
 
@@ -88,25 +94,56 @@ const StyledEmojiPage = styled.div`
   .btn:active {
   }
 
-  /* 
-  .nextbtn{
-    border: 2.5px solid #519957;
-    color: #519957;
-    background-color: white;
-    font-size: 16px;
-    
-    padding: 4px 25px;
-    opacity: 0.7;
+  @media only screen and (max-device-width: 960px) and (-webkit-min-device-pixel-ratio: 1) {
+    .EmojiContainerBox {
+      border: 3px solid black;
+
+      -webkit-box-shadow: 20px 16px 20px 10px #121f35;
+      box-shadow: 20px 16px 20px 10px #121f35;
+      padding: 100px 130px;
+      border-radius: 60px;
+
+      background-color: #d1d1d1; /* light gray */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15%;
+    }
+
+    h2 {
+      font-size: x-large;
+    }
+
+    .btn {
+      background-color: white;
+      position: relative;
+      display: block;
+      color: black;
+      font-size: 30px;
+      text-decoration: none;
+      margin: 25px;
+      border: 3.5px solid #519957;
+      border-radius: 30px;
+      height: 50%;
+      width: 85%;
+      overflow: hidden;
+    }
   }
 
-  .nextbtn:hover{
-    background-color: #ebffed;
-    color: #519957;
-   
-  }
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    .EmojiContainerBox {
+      padding: 60px 25px;
+      border-radius: 60px;
 
-  .nextbtn:active{
-    transition: none;
-    color: black;
-  } */
+      background-color: #d1d1d1; /* light gray */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20%;
+    }
+
+    h2 {
+      font-size: x-large;
+    }
+  }
 `;

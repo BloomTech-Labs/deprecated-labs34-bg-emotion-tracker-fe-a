@@ -6,7 +6,8 @@ import check from '../../../assets/images/ad12.jpg';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
 
-export default function Success() {
+export default function Success(props) {
+  const studentId = props.location.state;
   const [dogData, setDogData] = useState({});
   const history = useHistory();
   const onSubmit = () => {
@@ -38,7 +39,7 @@ export default function Success() {
             <span>Return to Check-in</span>
           </button>
           <h1> ✔️ </h1>
-          <h1>Check-in Successful!</h1>
+          <h1> {studentId} Check-in Successful!</h1>
           <h3>Hey, look, a cute doggo!</h3>
           <div className="dogimage">
             <img src={dogData.message} alt="cute dog" />

@@ -3,12 +3,10 @@ import { useHistory } from 'react-router-dom';
 import QrReader from 'modern-react-qr-reader';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-import { Button } from 'antd';
 
-const QRCodeReader = props => {
+const QRCodeReader = () => {
+  const [studentId, setStudentId] = useState('');
   const history = useHistory();
-
-  const [scanByWebcam, setScanByWebcam] = useState('');
 
   const handleError = err => {
     console.log(err);
@@ -16,17 +14,17 @@ const QRCodeReader = props => {
 
   const handleScan = data => {
     if (data) {
-      setScanByWebcam(data);
+      setStudentId(data);
     }
   };
 
   const handleChange = e => {
-    setScanByWebcam(e.target.value);
+    setStudentId(e.target.value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    history.push('/checking-buttons');
+    history.push('/checking-buttons', studentId);
     // Need to add where we going to send the Id that is recieved
   };
 
@@ -44,19 +42,18 @@ const QRCodeReader = props => {
             onScan={handleScan}
           />
           <h2>
-            QR Code Scanned: <br /> {scanByWebcam}
+            QR Code Scanned: <br /> {studentId}
           </h2>
 
           <form onSubmit={handleSubmit}>
             <label htmlFor="id-text">
               Student ID:
-              <input value={scanByWebcam} onChange={handleChange} />
+              <input value={studentId} onChange={handleChange} />
             </label>
             <button className="btn">Submit</button>
           </form>
         </div>
       </QRScanner>
-
     </div>
   );
 };

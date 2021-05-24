@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
@@ -16,18 +16,17 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
-import { QRCodeGenerator } from './components/pages/QRCodeGenerator';
 import { QRCodeReader } from './components/pages/QRCodeReader';
 import { ViewMembers } from './components/pages/Members';
 import { ViewPrograms } from './components/pages/Programs';
 import { ViewStaff } from './components/pages/Staff';
 import { ViewClubs } from './components/pages/Clubs';
+import Success from './components/pages/SuccessPage/Success';
 import { EmojiCheckIn } from './components/pages/EmojiCheckIn';
 import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
 import { EmojiCheckOut } from './components/pages/EmojiCheckOut';
-import { CheckEventActivity } from './components/pages/CheckEventActivity';
+import { CheckEventActivity } from './components/pages/ActivityCheckIn';
 import { CheckEventActivityEmoji } from './components/pages/CheckEventActivityEmoji';
-import Success from './components/pages/Success/Success';
 
 ReactDOM.render(
   <Router>
@@ -55,7 +54,6 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
-        {/* <Route path="/emoji" component={EmojiPage} /> */}
         <Route path="/success" component={Success} />
         <Route path="/qrreader" component={QRCodeReader} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}

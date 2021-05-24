@@ -71,23 +71,24 @@ const StyledActivities = styled.div`
 
   .left-arrow-button {
     display: inline-block;
+    background-color: transparent;
+    border-radius: 20px;
     border: none;
-    background-color: white;
     text-align: center;
-    font-size: 15.5px;
+    font-size: 20px;
     transition: all 0.5s;
-    margin: 30px;
+    margin: 20px;
     cursor: pointer;
-    margin-bottom: 140px;
-    margin-top: -155px;
-    margin-left: -200px;
+    /* margin-bottom: 10px; */
+    margin-top: -165px;
+    margin-left: -85%;
   }
 
   .arrow {
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
-    padding: 3px;
+    padding: 5px;
   }
 
   .left {
@@ -105,6 +106,7 @@ const StyledActivities = styled.div`
     padding: 200px 115px;
     border-radius: 60px;
 
+    background-color: #d1d1d1; /* light gray */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,6 +117,7 @@ const StyledActivities = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 25%;
     /* justify-content: space-between; */
   }
 
@@ -148,5 +151,69 @@ const StyledActivities = styled.div`
   .next:active {
     transition: none;
     color: black;
+  }
+
+  @media only screen and (max-device-width: 960px) and (-webkit-min-device-pixel-ratio: 1) {
+    .left-arrow-button {
+      display: inline-block;
+      background-color: transparent;
+      border-radius: 20px;
+      border: none;
+      text-align: center;
+      font-size: 20px;
+      transition: all 0.5s;
+      margin: 20px;
+      cursor: pointer;
+      /* margin-bottom: 10px; */
+      margin-top: -120px;
+      margin-left: -75%;
+    }
+
+    .ActivityContainerBox {
+      padding: 160px 110px;
+      border-radius: 60px;
+
+      background-color: #d1d1d1; /* light gray */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10%;
+    }
+  }
+
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    .left-arrow-button {
+      font-size: 14px;
+      transition: all 0.5s;
+      margin: 20px;
+      cursor: pointer;
+      /* margin-bottom: 10px; */
+      margin-top: -120px;
+      margin-left: -25%;
+    }
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3.5px;
+    }
+
+    .ActivityContainerBox {
+      padding: 145px 15px;
+      border-radius: 60px;
+      align-items: center;
+      margin-top: 10%;
+    }
+
+    label {
+      margin-top: 20%;
+    }
+    .dropdown {
+      border-radius: 20px;
+      background-color: white;
+      font-size: x-large;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
 `;

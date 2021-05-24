@@ -42,12 +42,12 @@ const QRCodeReader = () => {
             onScan={handleScan}
           />
           <h2>
-            QR Code Scanned: <br /> {studentId}
+            Scan Badge <br /> {studentId}
           </h2>
 
           <form onSubmit={handleSubmit}>
             <label htmlFor="id-text">
-              Student ID:
+              Enter ID:
               <input value={studentId} onChange={handleChange} />
             </label>
             <button className="btn">Submit</button>
@@ -134,4 +134,21 @@ const QRScanner = styled.div`
   transition: none;
   color: black;
 } */
+
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    .EmojiContainerBox {
+      padding: 60px 25px;
+      border-radius: 60px;
+
+      background-color: #d1d1d1; /* light gray */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20%;
+    }
+
+    h2 {
+      font-size: x-large;
+    }
+  }
 `;

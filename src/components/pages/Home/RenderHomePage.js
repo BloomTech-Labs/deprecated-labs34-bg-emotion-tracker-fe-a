@@ -13,19 +13,32 @@ const StyledHomePage = styled.header`
   width: 1200px;
   max-width: 90%;
   margin: 3rem auto;
+
+  button {
+    border: 200px;
+  }
 `;
 
 function RenderHomePage(props) {
   const { userInfo /*authService*/ } = props;
   return (
     <>
-      <NavBar titleName="Dashboard" backgroundColor="#293845" />
+      <NavBar backgroundColor="#293845" />
       <StyledHomePage>
-        <h2>Club Name</h2>
-        <Link to="./QRreader">
-          <Button type="primary">Click Me!</Button>
-        </Link>
-        <Card>Sample Data</Card>
+        <h2>Club Name:</h2>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '10vh',
+          }}
+        >
+          <Button type="primary" size="large" href="./QRreader">
+            QR Code
+          </Button>
+        </div>
+        {/* <Card>Sample Data</Card> */}
       </StyledHomePage>
     </>
   );

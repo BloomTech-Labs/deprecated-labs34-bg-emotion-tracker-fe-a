@@ -47,36 +47,64 @@ const EmojiContainerCheckIn = props => {
 
           <div className="emoji-div">
             <form>
-              <input
-                name="😁"
-                type="button"
-                value="😁"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😌"
-                type="button"
-                value="😌"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😕"
-                type="button"
-                value="😕"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😒"
-                type="button"
-                value="😒"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😭"
-                type="button"
-                value="😭"
-                onClick={inputChange}
-              ></input>
+              <div>
+                <input
+                  name="😎"
+                  type="button"
+                  value="😎"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😀"
+                  type="button"
+                  value="😀"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😌"
+                  type="button"
+                  value="😌"
+                  onClick={inputChange}
+                ></input>
+                <br />
+                <input
+                  name="🥱"
+                  type="button"
+                  value="🥱"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😕"
+                  type="button"
+                  value="😕"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="🥴"
+                  type="button"
+                  value="🥴"
+                  onClick={inputChange}
+                ></input>
+                <br />
+                <input
+                  name="😥"
+                  type="button"
+                  value="😥"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😤"
+                  type="button"
+                  value="😤"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="🤒"
+                  type="button"
+                  value="🤒"
+                  onClick={inputChange}
+                ></input>
+              </div>
             </form>
           </div>
 
@@ -111,7 +139,7 @@ const StyledEmoji = styled.div`
     margin: 8px;
     cursor: pointer;
     /* margin-bottom: 10px; */
-    margin-top: -165px;
+    margin-top: -75px;
     margin-left: -85%;
   }
 
@@ -130,18 +158,18 @@ const StyledEmoji = styled.div`
 
   /* Container box Start!!! */
   .EmojiContainerBox {
-    border: 2px solid black;
+    border: 3px solid black;
 
     -webkit-box-shadow: 20px 16px 20px 10px #121f35;
     box-shadow: 20px 16px 20px 10px #121f35;
-    padding: 190px 130px;
+    padding: 100px 130px;
     border-radius: 60px;
 
     background-color: #d1d1d1; /* light gray */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2%;
+    margin: 1%;
   }
   /* Container box End!!! */
 
@@ -227,13 +255,14 @@ const StyledEmoji = styled.div`
     /* Return Button End!!! */
 
     .EmojiContainerBox {
-      padding: 140px 25px;
+      padding: 100px 90px;
       border-radius: 60px;
 
       background-color: #d1d1d1; /* light gray */
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 5px;
     }
 
     input {
@@ -278,18 +307,13 @@ const StyledEmoji = styled.div`
   @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
     /* Return Button Start!!! */
     .left-arrow-button {
-      display: inline-block;
-      background-color: none;
-      border-radius: 20px;
-      border: none;
-      text-align: center;
       font-size: 14px;
       transition: all 0.5s;
       margin: 9px;
       cursor: pointer;
       /* margin-bottom: 10px; */
-      margin-top: -37%;
-      margin-left: -31%;
+      margin-top: -40%;
+      margin-left: -70%;
     }
 
     .arrow {

@@ -27,7 +27,7 @@ const CheckButtonsContainer = props => {
         <div className="EmojiContainerBox">
           <h2>
             {' '}
-            What are we doing today <strong>{studentId}</strong>!
+            What are we doing? <strong>{studentId}</strong>
           </h2>
           <button onClick={routeToCheckIn} className="btn CheckButtons">
             Check-In

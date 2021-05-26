@@ -59,38 +59,67 @@ const EmojiContainerCheckIn = props => {
           <h1 className="id">{studentInfo.studentId}</h1>
 
           <h2 className="feelingTitle">How Are you Feeling?</h2>
+
           <div className="emoji-div">
             <form>
-              <input
-                name="😁"
-                type="button"
-                value="😁"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😌"
-                type="button"
-                value="😌"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😕"
-                type="button"
-                value="😕"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😒"
-                type="button"
-                value="😒"
-                onClick={inputChange}
-              ></input>
-              <input
-                name="😭"
-                type="button"
-                value="😭"
-                onClick={inputChange}
-              ></input>
+              <div>
+                <input
+                  name="😎"
+                  type="button"
+                  value="😎"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😀"
+                  type="button"
+                  value="😀"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😌"
+                  type="button"
+                  value="😌"
+                  onClick={inputChange}
+                ></input>
+                <br />
+                <input
+                  name="🥱"
+                  type="button"
+                  value="🥱"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😕"
+                  type="button"
+                  value="😕"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="🥴"
+                  type="button"
+                  value="🥴"
+                  onClick={inputChange}
+                ></input>
+                <br />
+                <input
+                  name="😥"
+                  type="button"
+                  value="😥"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="😤"
+                  type="button"
+                  value="😤"
+                  onClick={inputChange}
+                ></input>
+                <input
+                  name="🤒"
+                  type="button"
+                  value="🤒"
+                  onClick={inputChange}
+                ></input>
+              </div>
             </form>
           </div>
 
@@ -124,9 +153,8 @@ const StyledEmoji = styled.div`
     transition: all 0.5s;
     margin: 8px;
     cursor: pointer;
-    /* margin-bottom: 10px; */
-    margin-top: -165px;
-    margin-left: -85%;
+    margin-top: -70px;
+    margin-left: -60%;
   }
 
   .arrow {
@@ -144,18 +172,18 @@ const StyledEmoji = styled.div`
 
   /* Container box Start!!! */
   .EmojiContainerBox {
-    border: 2px solid black;
+    border: 3px solid black;
 
     -webkit-box-shadow: 20px 16px 20px 10px #121f35;
     box-shadow: 20px 16px 20px 10px #121f35;
-    padding: 190px 130px;
+    padding: 100px 130px;
     border-radius: 60px;
 
     background-color: #d1d1d1; /* light gray */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2%;
+    margin: 1%;
   }
   /* Container box End!!! */
 
@@ -218,18 +246,11 @@ const StyledEmoji = styled.div`
 
     /* Return Button Start!!! */
     .left-arrow-button {
-      display: inline-block;
-      background-color: none;
-      border-radius: 20px;
-      border: none;
-      text-align: center;
       font-size: 20px;
       transition: all 0.5s;
       margin: 10px;
-      cursor: pointer;
-      /* margin-bottom: 10px; */
       margin-top: -17%;
-      margin-left: -57%;
+      margin-left: -45%;
     }
 
     .arrow {
@@ -241,20 +262,15 @@ const StyledEmoji = styled.div`
     /* Return Button End!!! */
 
     .EmojiContainerBox {
-      padding: 140px 25px;
+      padding: 100px 90px;
       border-radius: 60px;
-
       background-color: #d1d1d1; /* light gray */
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin-bottom: 5px;
     }
 
     input {
-      flex-wrap: wrap;
-      justify-content: space-evenly;
       font-size: 76px;
-      cursor: pointer;
       transition: all 0.5s ease-in-out;
       margin: 4%;
       margin-left: 12px;
@@ -292,14 +308,13 @@ const StyledEmoji = styled.div`
   @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
     /* Return Button Start!!! */
     .left-arrow-button {
-      border-radius: 20px;
       font-size: 14px;
       transition: all 0.5s;
       margin: 9px;
       cursor: pointer;
       /* margin-bottom: 10px; */
-      margin-top: -37%;
-      margin-left: -20%;
+      margin-top: -40%;
+      margin-left: -55%;
     }
 
     .arrow {
@@ -323,6 +338,11 @@ const StyledEmoji = styled.div`
       /* margin: ; */
     }
 
+    form {
+      display: flex;
+      flex-direction: row;
+    }
+
     input {
       flex-wrap: wrap;
       justify-content: space-evenly;
@@ -333,6 +353,11 @@ const StyledEmoji = styled.div`
       margin-right: 3.5px;
       border: none;
       background: transparent;
+    }
+
+    input:hover {
+      transform: scale(2.2);
+      /* transform: rotate(360deg); */
     }
   }
 `;

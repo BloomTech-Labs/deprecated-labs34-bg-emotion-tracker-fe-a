@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import QrReader from 'modern-react-qr-reader';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
 
-const QRCodeReader = () => {
-  const [studentId, setStudentId] = useState('');
+const QRCodeReader = ({ setStatus, status }) => {
+  console.log(status);
   const history = useHistory();
 
   const handleError = err => {
@@ -14,17 +14,17 @@ const QRCodeReader = () => {
 
   const handleScan = data => {
     if (data) {
-      setStudentId(data);
+      setStatus({ ...status, studentId: data });
     }
   };
 
   const handleChange = e => {
-    setStudentId(e.target.value);
+    setStatus({ ...status, studentId: e.target.value });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    history.push('/checking-buttons', studentId);
+    history.push('/emoji-check-in');
     // Need to add where we going to send the Id that is recieved
   };
 
@@ -41,14 +41,12 @@ const QRCodeReader = () => {
             Error={handleError}
             onScan={handleScan}
           />
-          <h2>
-            Scan Badge <br /> {studentId}
-          </h2>
+          <h2>Scan Badge</h2>
 
           <form onSubmit={handleSubmit}>
             <label htmlFor="id-text">
               Enter ID:
-              <input value={studentId} onChange={handleChange} />
+              <input value={status.studentId} onChange={handleChange} />
             </label>
             <button className="btn">Submit</button>
           </form>

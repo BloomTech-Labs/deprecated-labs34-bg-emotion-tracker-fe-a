@@ -6,17 +6,16 @@ import styled from 'styled-components';
 // import axios from 'axios';
 
 const CheckButtonsContainer = props => {
-  const studentId = props.location.state;
   const history = useHistory();
 
   const routeToCheckIn = () => {
-    history.push('/emoji-check-in', studentId);
+    history.push('/emoji-check-in');
   };
   const routeToCheckEvent = () => {
-    history.push('/activity-check-in', studentId);
+    history.push('/activity-check-in');
   };
   const routeToCheckOut = () => {
-    history.push('/emoji-check-out', studentId);
+    history.push('/emoji-check-out');
   };
 
   return (
@@ -27,7 +26,7 @@ const CheckButtonsContainer = props => {
         <div className="EmojiContainerBox">
           <h2>
             {' '}
-            What are we doing? <strong>{studentId}</strong>
+            What are we doing?
           </h2>
           <button onClick={routeToCheckIn} className="btn CheckButtons">
             Check-In

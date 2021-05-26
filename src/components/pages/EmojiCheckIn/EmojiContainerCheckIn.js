@@ -4,37 +4,30 @@ import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
 import axios from 'axios';
 
-const EmojiContainerCheckIn = props => {
-  const studentInfo = {
-    studentId: props.location.state,
-    reaction: '',
-  };
-  const [formState, setFormState] = useState({ studentInfo });
+const EmojiContainerCheckIn = ({ setStatus, status }) => {
+  console.log(status);
   const history = useHistory();
 
   const OnSubmit = () => {
-    history.push('/success', formState.studentId);
+    history.push('/success');
   };
 
   const goToMainPage = () => {
-    history.push('/checking-buttons', formState.studentId);
+    history.push('/checking-buttons');
   };
 
   const inputChange = e => {
-    setFormState({
-      ...studentInfo,
-      reaction: e.target.value,
+    setStatus({
+      ...status,
+      reaction: e.target.name,
     });
-    console.log(formState);
   };
 
   return (
     <>
       <NavBar />
       <StyledEmoji>
-        <h1>
-          Check In <strong>{studentInfo.studentId}</strong>
-        </h1>
+        <h1>Check In</h1>
 
         <div className="EmojiContainerBox">
           <p onClick={goToMainPage} className="left-arrow-button">
@@ -43,7 +36,7 @@ const EmojiContainerCheckIn = props => {
           </p>
 
           {/* Hardcoded for now */}
-          <h1 className="id">#263746</h1>
+          <h1 className="id">{status.studenId}</h1>
 
           <h2 className="feelingTitle">How Are you Feeling?</h2>
 

@@ -5,17 +5,24 @@ import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
 // import axios from 'axios';
 
-const CheckButtonsContainer = props => {
+const CheckButtonsContainer = ({ setStatus, status }) => {
   const history = useHistory();
 
   const routeToCheckIn = () => {
-    history.push('/emoji-check-in');
+    setStatus({ ...status, task: 'Check-in', activity: false });
+    history.push('/QrReader');
   };
   const routeToCheckEvent = () => {
+    setStatus({
+      ...status,
+      task: 'Activity Checkout',
+      activity: true,
+    });
     history.push('/activity-check-in');
   };
   const routeToCheckOut = () => {
-    history.push('/emoji-check-out');
+    setStatus({ ...status, task: 'Check-out', activity: false });
+    history.push('/QrReader');
   };
 
   return (
@@ -24,10 +31,7 @@ const CheckButtonsContainer = props => {
 
       <StyledEmojiPage>
         <div className="EmojiContainerBox">
-          <h2>
-            {' '}
-            What are we doing?
-          </h2>
+          <h2> What are we doing?</h2>
           <button onClick={routeToCheckIn} className="btn CheckButtons">
             Check-In
           </button>

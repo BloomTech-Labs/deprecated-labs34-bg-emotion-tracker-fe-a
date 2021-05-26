@@ -25,7 +25,7 @@ function RenderHomePage(props) {
     <>
       <NavBar backgroundColor="#293845" />
       <StyledHomePage>
-        <h2>Club Name:</h2>
+        <h2 style={{ textAlign: 'center' }}>Club Name:</h2>
         <div
           style={{
             display: 'flex',
@@ -34,8 +34,8 @@ function RenderHomePage(props) {
             height: '10vh',
           }}
         >
-          <Button type="primary" size="large" href="./QRreader">
-            QR Code
+          <Button type="primary" size="large" href="./checking-buttons">
+            Check-in/Check-out
           </Button>
         </div>
         {/* <Card>Sample Data</Card> */}

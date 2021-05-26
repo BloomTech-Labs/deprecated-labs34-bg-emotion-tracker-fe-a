@@ -38,6 +38,12 @@ ReactDOM.render(
 );
 
 function App() {
+  const [status, setStatus] = useState({
+    task: '',
+    studentId: '',
+    reaction: '',
+    activity: false,
+  });
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
   // React Router has a nifty useHistory hook we can use at this level to ensure we have security around our routes.
   const history = useHistory();
@@ -55,21 +61,24 @@ function App() {
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
         <Route path="/success" component={Success} />
-        <Route path="/qrreader" component={QRCodeReader} />
+        <Route path="/qrreader">
+          <QRCodeReader setStatus={setStatus} status={status} />
+        </Route>
         {/* any of the routes you need secured should be registered as SecureRoutes */}
 
-        <SecureRoute
-          exact
-          path="/checking-buttons"
-          component={CheckInEventOut}
-        />
-        <SecureRoute exact path="/emoji-check-in" component={EmojiCheckIn} />
-        <SecureRoute exact path="/emoji-check-out" component={EmojiCheckOut} />
-        <SecureRoute
-          exact
-          path="/activity-check-in"
-          component={CheckEventActivity}
-        />
+        <SecureRoute exact path="/checking-buttons">
+          <CheckInEventOut setStatus={setStatus} status={status} />
+        </SecureRoute>
+
+        <SecureRoute exact path="/emoji-check-in">
+          <EmojiCheckIn setStatus={setStatus} status={status} />
+        </SecureRoute>
+        <SecureRoute exact path="/emoji-check-out">
+          <EmojiCheckOut setStatus={setStatus} status={status} />
+        </SecureRoute>
+        <SecureRoute exact path="/activity-check-in">
+          <CheckEventActivity setStatus={setStatus} status={status} />
+        </SecureRoute>
         <SecureRoute
           exact
           path="/activity-check-in-emoji"

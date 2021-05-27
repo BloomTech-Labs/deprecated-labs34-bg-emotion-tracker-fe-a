@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import axios from 'axios';
 // import './Success.css';
 import check from '../../../assets/images/ad12.jpg';
@@ -9,6 +9,7 @@ import styled from 'styled-components';
 export default function Success(props) {
   const studentId = props.location.state;
   const [dogData, setDogData] = useState({});
+  const [flowDone, setFlowDone] = useState(true);
   const history = useHistory();
   const onSubmit = () => {
     history.push('/');
@@ -17,6 +18,10 @@ export default function Success(props) {
   const goToMainPage = () => {
     history.push('/checking-buttons');
   };
+
+  setTimeout(function() {
+    window.location.replace('/checking-buttons');
+  }, 3000);
 
   useEffect(() => {
     fetch('https://dog.ceo/api/breeds/image/random')

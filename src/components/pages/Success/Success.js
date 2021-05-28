@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
-// import './Success.css';
-import check from '../../../assets/images/ad12.jpg';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
 
-export default function Success(props) {
-  const studentId = props.location.state;
+export default function Success({ status, setStatus }) {
   const [dogData, setDogData] = useState({});
   const history = useHistory();
-  const onSubmit = () => {
-    history.push('/');
+
+  const onSubmit = e => {
+    e.preventDefault();
+    setStatus({
+      ...status,
+      studentId: '',
+      reaction: '',
+    });
+    history.push('/qrreader');
   };
 
   const goToMainPage = () => {
@@ -35,17 +38,28 @@ export default function Success(props) {
       <StyledEmoji>
         <div className="EmojiContainerBox">
           <button onClick={goToMainPage} className="left-arrow-button">
-            <i class="arrow left"></i>
+            <i className="arrow left"></i>
             <span>Return to Check-in</span>
           </button>
-          <h1> ✔️ </h1>
-          <h1> {studentId} Check-in Successful!</h1>
+          <h1 style={{ fontSize: '7rem' }}> {status.reaction} </h1>
+          <h1 style={{ textAlign: 'center' }}>
+            {' '}
+            {status.studentId} <br /> Successful!
+          </h1>
           <h3>Hey, look, a cute doggo!</h3>
           <div className="dogimage">
-            <img src={dogData.message} alt="cute dog" />
+            <img
+              style={{
+                margin: '0 auto',
+                maxWidth: '80%',
+                maxHeight: '70vh',
+              }}
+              src={dogData.message}
+              alt="cute dog"
+            />
           </div>
           <button onClick={onSubmit} className="finish-button">
-            Return to Dashboard
+            Completed
           </button>
         </div>
       </StyledEmoji>

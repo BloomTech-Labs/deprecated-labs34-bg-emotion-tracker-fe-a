@@ -1,27 +1,25 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-// import React, { useEffect, useState } from 'react';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-// import axios from 'axios';
 
 const CheckButtonsContainer = ({ setStatus, status }) => {
   const history = useHistory();
 
   const routeToCheckIn = () => {
-    setStatus({ ...status, task: 'Check-in', activity: false });
+    setStatus({ ...status, task: 'Check-in', isActivity: false });
     history.push('/QrReader');
   };
   const routeToCheckEvent = () => {
     setStatus({
       ...status,
       task: 'Activity Checkout',
-      activity: true,
+      isActivity: true,
     });
-    history.push('/activity-check-in');
+    history.push('/activity-check-out');
   };
   const routeToCheckOut = () => {
-    setStatus({ ...status, task: 'Check-out', activity: false });
+    setStatus({ ...status, task: 'Check-out', isActivity: false });
     history.push('/QrReader');
   };
 
@@ -36,7 +34,7 @@ const CheckButtonsContainer = ({ setStatus, status }) => {
             Check-In
           </button>
           <button onClick={routeToCheckEvent} className="btn CheckButtons">
-            Activity Check-In
+            Activity Check-Out
           </button>
           <button onClick={routeToCheckOut} className="btn CheckButtons">
             Check-Out

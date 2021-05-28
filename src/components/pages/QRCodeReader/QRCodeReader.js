@@ -5,11 +5,10 @@ import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
 
 const QRCodeReader = ({ setStatus, status }) => {
-  console.log(status);
   const history = useHistory();
 
   const handleError = err => {
-    console.log(err);
+    alert(err);
   };
 
   const handleScan = data => {
@@ -24,8 +23,13 @@ const QRCodeReader = ({ setStatus, status }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    history.push('/emoji-check-in');
-    // Need to add where we going to send the Id that is recieved
+    if (status.task === 'Activity Checkout') {
+      history.push('/activity-check-out-emoji');
+    } else if (status.task === 'Check-in') {
+      history.push('/emoji-check-in');
+    } else {
+      history.push('/emoji-check-out');
+    }
   };
 
   return (
@@ -37,16 +41,19 @@ const QRCodeReader = ({ setStatus, status }) => {
             className="QRScanner"
             delay={300}
             facingMode={'environment'}
-            on
-            Error={handleError}
+            onError={handleError}
             onScan={handleScan}
           />
-          <h2>Scan Badge</h2>
+          <h2>Scan Badge {status.studentId} </h2>
 
           <form onSubmit={handleSubmit}>
             <label htmlFor="id-text">
               Enter ID:
-              <input value={status.studentId} onChange={handleChange} />
+              <input
+                value={status.studentId}
+                onChange={handleChange}
+                required
+              />
             </label>
             <button className="btn">Submit</button>
           </form>

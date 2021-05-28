@@ -3,14 +3,18 @@ import { useHistory } from 'react-router-dom';
 // import React, { useEffect, useState } from 'react';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-// import axios from 'axios';
 
-const CheckEventActivityEmoji = props => {
-  console.log(props);
+const CheckEventActivityEmoji = ({ setStatus, status }) => {
   const history = useHistory();
 
-  const OnSubmit = props => {
+  const submit = e => {
+    e.preventDefault();
     history.push('/QrReader');
+  };
+
+  const change = e => {
+    setStatus({ ...status, event: e.target.value });
+    console.log(e.target.value);
   };
 
   const goToMainPage = () => {
@@ -24,13 +28,15 @@ const CheckEventActivityEmoji = props => {
         <h1>Check Event</h1>
         <div className="ActivityContainerBox">
           <button onClick={goToMainPage} className="left-arrow-button">
-            <i class="arrow left"></i>
+            <i className="arrow left"></i>
             <span> Return to Checking </span>
           </button>
 
-          <form className="form container">
+          <form className="form container" onSubmit={submit} onChange={change}>
             <label>
-              <h2 className="">Select Your Activity</h2>
+              <h2 className="activitySelection" style={{ fontSize: '3rem' }}>
+                Select Activity
+              </h2>
               <select className="dropdown" name="size">
                 <option value="">- Select an option -</option>
                 <option value="sports">⚽️ Sports</option>
@@ -46,11 +52,8 @@ const CheckEventActivityEmoji = props => {
                 <option value="torchClub">🗂Torch Club</option>
               </select>
             </label>
+            <button className="next">Next</button>
           </form>
-
-          <button className="next" onClick={OnSubmit}>
-            Next
-          </button>
         </div>
       </StyledActivities>
     </>

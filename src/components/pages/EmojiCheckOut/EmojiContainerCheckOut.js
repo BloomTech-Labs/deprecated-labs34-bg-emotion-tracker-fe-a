@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-import axios from 'axios';
 
-const EmojiContainerCheckIn = props => {
-  console.log(props);
+const EmojiContainerCheckIn = ({ status, setStatus }) => {
   const history = useHistory();
 
   const OnSubmit = () => {
@@ -17,8 +15,8 @@ const EmojiContainerCheckIn = props => {
   };
 
   const inputChange = e => {
-    props.setStatus({
-      ...props.status,
+    setStatus({
+      ...status,
       reaction: e.target.value,
     });
   };
@@ -27,7 +25,7 @@ const EmojiContainerCheckIn = props => {
     <>
       <NavBar />
       <StyledEmoji>
-        <h1>Check Out {props.status.studentId} </h1>
+        <h1>Check Out {status.studentId} </h1>
 
         <div className="EmojiContainerBox">
           <p onClick={goToMainPage} className="left-arrow-button">
@@ -36,7 +34,7 @@ const EmojiContainerCheckIn = props => {
           </p>
 
           {/* Hardcoded for now */}
-          <h1 className="id">Checking out {props.status.studentId} </h1>
+          <h1 className="id">Checking out {status.studentId} </h1>
 
           <h2 className="feelingTitle">How Are you Feeling?</h2>
 

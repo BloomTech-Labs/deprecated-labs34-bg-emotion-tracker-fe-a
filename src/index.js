@@ -21,7 +21,7 @@ import { ViewMembers } from './components/pages/Members';
 import { ViewPrograms } from './components/pages/Programs';
 import { ViewStaff } from './components/pages/Staff';
 import { ViewClubs } from './components/pages/Clubs';
-import Success from './components/pages/SuccessPage/Success';
+import Success from './components/pages/Success/Success';
 import { EmojiCheckIn } from './components/pages/EmojiCheckIn';
 import { CheckInEventOut } from './components/pages/Check-In-Event-Out';
 import { EmojiCheckOut } from './components/pages/EmojiCheckOut';
@@ -42,7 +42,8 @@ function App() {
     task: '',
     studentId: '',
     reaction: '',
-    activity: false,
+    event: '',
+    isActivity: false,
   });
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
   // React Router has a nifty useHistory hook we can use at this level to ensure we have security around our routes.
@@ -60,10 +61,12 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
-        <Route path="/success" component={Success} />
-        <Route path="/qrreader">
+        <SecureRoute path="/success">
+          <Success setStatus={setStatus} status={status} />
+        </SecureRoute>
+        <SecureRoute path="/qrreader">
           <QRCodeReader setStatus={setStatus} status={status} />
-        </Route>
+        </SecureRoute>
         {/* any of the routes you need secured should be registered as SecureRoutes */}
 
         <SecureRoute exact path="/checking-buttons">
@@ -76,18 +79,12 @@ function App() {
         <SecureRoute exact path="/emoji-check-out">
           <EmojiCheckOut setStatus={setStatus} status={status} />
         </SecureRoute>
-        <SecureRoute exact path="/activity-check-in">
+        <SecureRoute exact path="/activity-check-out">
           <CheckEventActivity setStatus={setStatus} status={status} />
         </SecureRoute>
-        <SecureRoute
-          exact
-          path="/activity-check-in-emoji"
-          component={CheckEventActivityEmoji}
-        />
-
-        {/* <SecureRoute
-          exact path="/success-page" component={ }
-        /> */}
+        <SecureRoute exact path="/activity-check-out-emoji">
+          <CheckEventActivityEmoji setStatus={setStatus} status={status} />
+        </SecureRoute>
 
         <SecureRoute
           exact

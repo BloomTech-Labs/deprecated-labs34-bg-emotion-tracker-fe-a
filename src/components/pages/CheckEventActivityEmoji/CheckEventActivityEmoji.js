@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-import axios from 'axios';
+// import axios from 'axios';
 
-const EmojiContainerCheckIn = props => {
-  const studentInfo = {
-    studentId: props.location.state,
-    reaction: '',
-  };
-  const [formState, setFormState] = useState({ studentInfo });
+const EmojiContainerCheckIn = ({ status, setStatus }) => {
   const history = useHistory();
 
-  const OnSubmit = () => {
-    history.push('/success', formState);
+  const OnSubmit = e => {
+    history.push('/success');
   };
 
   const goToPrevPage = () => {
-    history.push('/activity-check-in', formState.studentId);
+    history.push('/activity-check-out');
   };
 
   // const formSubmit = e => {
@@ -36,11 +31,10 @@ const EmojiContainerCheckIn = props => {
   // };
 
   const inputChange = e => {
-    setFormState({
-      ...studentInfo,
+    setStatus({
+      ...status,
       reaction: e.target.value,
     });
-    console.log(formState);
   };
 
   return (
@@ -51,12 +45,12 @@ const EmojiContainerCheckIn = props => {
 
         <div className="EmojiContainerBox">
           <p onClick={goToPrevPage} className="left-arrow-button">
-            <i class="arrow left"></i>
-            <span> Return to Activity Check-In </span>
+            <i className="arrow left"></i>
+            <span> Return to Activity Check-out </span>
           </p>
 
           {/* Hardcoded for now */}
-          <h1 className="id">{studentInfo.studentId}</h1>
+          <h1 className="id">{status.studentId}</h1>
 
           <h2 className="feelingTitle">How Are you Feeling?</h2>
 
@@ -76,31 +70,11 @@ const EmojiContainerCheckIn = props => {
                   onClick={inputChange}
                 ></input>
                 <input
-                  name="😌"
-                  type="button"
-                  value="😌"
-                  onClick={inputChange}
-                ></input>
-                <br />
-                <input
                   name="🥱"
                   type="button"
                   value="🥱"
                   onClick={inputChange}
                 ></input>
-                <input
-                  name="😕"
-                  type="button"
-                  value="😕"
-                  onClick={inputChange}
-                ></input>
-                <input
-                  name="🥴"
-                  type="button"
-                  value="🥴"
-                  onClick={inputChange}
-                ></input>
-                <br />
                 <input
                   name="😥"
                   type="button"
@@ -111,12 +85,6 @@ const EmojiContainerCheckIn = props => {
                   name="😤"
                   type="button"
                   value="😤"
-                  onClick={inputChange}
-                ></input>
-                <input
-                  name="🤒"
-                  type="button"
-                  value="🤒"
                   onClick={inputChange}
                 ></input>
               </div>

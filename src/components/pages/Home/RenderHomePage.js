@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import NavBar from '../../common/NavBar';
 import { Card } from 'antd';
 import { Button } from 'antd';
-import QrReader from '../QRCodeReader';
 
 const StyledHomePage = styled.header`
   display: flex;

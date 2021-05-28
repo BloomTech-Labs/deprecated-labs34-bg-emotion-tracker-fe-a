@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import NavBar from '../../common/NavBar';
 import styled from 'styled-components';
-import axios from 'axios';
 
 const EmojiContainerCheckIn = ({ setStatus, status }) => {
-  console.log(status);
   const history = useHistory();
 
   const OnSubmit = () => {
@@ -31,7 +29,7 @@ const EmojiContainerCheckIn = ({ setStatus, status }) => {
 
         <div className="EmojiContainerBox">
           <p onClick={goToMainPage} className="left-arrow-button">
-            <i class="arrow left"></i>
+            <i className="arrow left"></i>
             <span> Return to Checking </span>
           </p>
 
